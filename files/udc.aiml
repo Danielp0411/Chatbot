@@ -14,7 +14,7 @@
     
     <category>
         <pattern>MY NAME IS *</pattern>
-        <template>Hello <star index="1"/>. I'm Spot, here to assist you! Congratulations on being so close to graduation. Are you seeking career guidance?</template>
+        <template>Hello <star index="1"/>. My name is Spot. Congratulations on being so close to graduation. Are you seeking career guidance?</template>
     </category>
     
     <category>
