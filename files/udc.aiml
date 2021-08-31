@@ -9,12 +9,12 @@
   
     <category>
         <pattern>HELLO</pattern>
-        <template>What should I call you? Respond with "My name is.."</template>
+        <template>Hello there! My name is Spot..Spot the Bot.  What should I call you? Respond with "My name is.."</template>
     </category>
     
     <category>
         <pattern>MY NAME IS *</pattern>
-        <template>Hello <star index="1"/>. My name is Spot. Congratulations on being so close to graduation. Are you seeking career guidance?</template>
+        <template> Hi <star index="1"/>! Congratulations on being so close to graduation. Are you seeking career guidance?</template>
     </category>
     
     <category>
@@ -59,7 +59,7 @@
     
      <category>
         <pattern>Programming</pattern>
-        <template>
+        <template>Click "Interested" under your preferred category.
             <carousel>
                 <card>
                     <image>https://i.imgur.com/Bu7xaYJ.jpg</image>
@@ -94,7 +94,7 @@
     
          <category>
         <pattern>Designing</pattern>
-        <template>
+        <template>Click "Interested" under your preferred category.
             <carousel>
                 <card>
                     <image>https://i.imgur.com/Bu7xaYJ.jpg</image>
