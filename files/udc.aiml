@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+  <!-- This section asks all of the initial questions to the user -->
+  <category>
+    <pattern>*</pattern>
+    <template>I have no answer for that. Type "Hello" to begin.</template>
+  </category>
+  
+    <category>
+        <pattern>HELLO</pattern>
+        <template>What should I call you? Respond with "My name is.."</template>
+    </category>
+    
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>Hello <star index="1"/>. I'm Spot, here to assist you! Congratulations on being so close to graduation. Are you seeking career guidance?</template>
+    </category>
+    
+    <category>
+        <pattern>^ YES ^</pattern>
+        <template>Great! What degree are you majoring in?
+        <button>
+            <text>Computer Science</text>
+            <postback>Computer Science</postback>
+        </button>
+        <button>
+            <text>Other</text>
+            <postback>Other</postback>
+        </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>^ NO ^</pattern>
+        <template>Sorry, I won't be able to assist you. Have a great day!</template>
+    </category>
+    
+    <category>
+        <pattern>OTHER</pattern>
+        <template>Sorry, I currently only work with Computer Science majors. I won't be able to assist you. :/</template>
+    </category>
+    
+     <category>
+        <pattern>COMPUTER SCIENCE</pattern>
+        <template>That's a great choice! Are you more proficient in programming or designing?
+        <button>
+            <text>Programming</text>
+            <postback><think><set name = "proficiency">Programming</set></think>Programming</postback>
+        </button>
+        <button>
+            <text>Designing</text>
+            <postback><think><set name = "proficiency">Designing</set></think>Designing</postback>
+        </button>
+        </template>
+    </category>
+    
+    <!-- This section creates a carousel of pictures and options for the user to select from -->
+    
+     <category>
+        <pattern>Programming</pattern>
+        <template>
+            <carousel>
+                <card>
+                    <image>https://i.imgur.com/Bu7xaYJ.jpg</image>
+                    <title>Web</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text>Interested</text>
+                        <postback><think><set name = "Web">Web</set></think>ProgrammingWeb</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://i.imgur.com/BgULdva.jpg</image>
+                    <title>Mobile</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text>Interested</text>
+                        <postback><think><set name = "Mobile">Mobile</set></think>ProgrammingMobile</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://i.imgur.com/Mji8Qdu.jpg</image>
+                    <title>Data</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text>Interested</text>
+                        <postback><think><set name = "Data">Data</set></think>ProgrammingData</postback>
+                    </button>
+                </card>
+            </carousel>
+        </template>
+    </category>
+    
+         <category>
+        <pattern>Designing</pattern>
+        <template>
+            <carousel>
+                <card>
+                    <image>https://i.imgur.com/Bu7xaYJ.jpg</image>
+                    <title>Web</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text>Interested</text>
+                        <postback><think><set name = "Web">Web</set></think>DesigningWeb</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://i.imgur.com/BgULdva.jpg</image>
+                    <title>Mobile</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text>Interested</text>
+                        <postback><think><set name = "Mobile">Mobile</set></think>DesigningMobile</postback>
+                    </button>
+                </card>
+                <card>
+                    <image>https://i.imgur.com/Mji8Qdu.jpg</image>
+                    <title>Data</title>
+                    <subtitle></subtitle>
+                    <button>
+                        <text>Interested</text>
+                        <postback><think><set name = "Data">Data</set></think>DesigningData</postback>
+                    </button>
+                </card>
+            </carousel>
+        </template>
+    </category>
+    
+<!-- This section suggests jobs according to their answers above -->
+    <category>
+        <pattern>ProgrammingWeb</pattern><template>The job that would fit you the best is a Web Developer!
+        <button>
+            <text>Learn more!</text>
+            <url>https://money.usnews.com/careers/best-jobs/web-developer</url>
+        </button>        
+        </template>
+    </category>
+    
+    <category>
+        <pattern>ProgrammingMobile</pattern><template>The job that would fit you the best is a App Developer!
+        <button>
+            <text>Learn more!</text>
+            <url>https://www.careerexplorer.com/careers/app-developer/</url>
+        </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>ProgrammingData</pattern>
+        <template>The job that would fit you the best is a Data Scientist!
+        <button>
+            <text>Learn more!</text>
+            <url>https://money.usnews.com/careers/best-jobs/data-scientist</url>
+        </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DesigningWeb</pattern>
+        <template>The job that would fit you the best is a Web Designer! 
+        <button>
+            <text>Learn more!</text>
+            <url>https://www.careerexplorer.com/careers/web-designer/</url>
+        </button>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DesigningMobile</pattern><template>The job that would fit you the best is a UI/UX Designer!
+        <button>
+            <text>Learn more!</text>
+            <url>https://www.springboard.com/library/ui-ux-design/job-description/</url>
+        </button>        
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DesigningData</pattern><template>The job that would fit you the best is a Database Designer!
+        <button>
+            <text>Learn more!</text>
+            <url>https://www.zippia.com/database-designer-jobs/what-does-a-database-designer-do/</url>
+        </button>        
+        </template>
+    </category>
+    
+</aiml>
